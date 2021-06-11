@@ -1,0 +1,62 @@
+﻿@model ProdCadastro.Models.Prod
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h2>Cadastro do Produto</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend><b>Digite os dados do produto</b></legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Codigo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Codigo)
+            @Html.ValidationMessageFor(model => model.Codigo)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descricao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descricao)
+            @Html.ValidationMessageFor(model => model.Descricao)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Peso)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Peso)
+            @Html.ValidationMessageFor(model => model.Peso)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Categoria)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Categoria)
+            @Html.ValidationMessageFor(model => model.Categoria)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PrecoUnitario)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PrecoUnitario)
+            @Html.ValidationMessageFor(model => model.PrecoUnitario)
+        </div>
+
+        <p><input type="submit" value="Cadastrar!"/></p>
+    </fieldset>
+    @section Scripts
+    { 
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+}
